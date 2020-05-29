@@ -1,19 +1,22 @@
 <h1>Edit <%= @product.name %> </h1>
 
-<form action= "/products" class="new_product" id="new_product" method="post"><%= token_tag %> 
+<form action= "/products/<%=@product.id%>" class="edit_product" id="edit_product" method="post"><%= token_tag %> 
+<input type="hidden" name="_method" value="patch" />
   <div class="form-row">
     <div class="form-group col-md-4">
       <label for="inputName">Product Name</label>
-      <input type="text" class="form-control" id="inputName" placeholder="Name" name= "product[name]">
+      <input type="text" class="form-control" id="inputName" placeholder="Name" name= "product[name]" value="<%=@product.name%>">
     </div>
     <div class="form-group col-md-4">
       <label for="inputCost">Cost</label>
-      <input type="text" class="form-control" id="inputCost" placeholder="Cost" name= "product[cost]">
+      <input type="text" class="form-control" id="inputCost" placeholder="Cost" name= "product[cost]" value="<%=@product.cost%>">
     </div>
     <div class="form-group col-md-4">
       <label for="inputOrigin">Country of Origin</label>
-      <input type="text" class="form-control" id="inputOrigin" placeholder="Us, Russia, China etc." name="product[country_of_origin]">
+      <input type="text" class="form-control" id="inputOrigin" placeholder="Us, Russia, China etc." name="product[country_of_origin]" value="<%=@product.country_of_origin%>">
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Add Product</button>
-</form> 
+  <button type="submit" class="btn btn-primary">Edit Product</button>
+</form>
+<br>
+<p><%= link_to "Return to Product Page", product_path(@product) %></p>
