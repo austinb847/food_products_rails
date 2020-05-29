@@ -1,0 +1,23 @@
+<h1>Add Review for <%=@product.name %></h1>
+
+<form action= "/products/<%=@product.id%>/reviews" class="new_review" id="new_review" method="post"><%= token_tag %> 
+  <div class="form-group">
+    <label for="inputAuthor">Author Name</label>
+    <input type="text" class="form-control" id="inputAuthor" placeholder="John Doe" name="review[author]">
+  </div>
+  <div class="form-group">
+    <label for="inputRating">Select a Rating between 1-5</label>
+    <select class="form-control" id="inputRating" name="review[rating]">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="inputContentBody">Review Content</label>
+    <textarea class="form-control" id="inputContentBody" rows="3" name="review[content_body]"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Review</button>
+</form> 
