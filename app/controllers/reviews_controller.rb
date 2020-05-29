@@ -16,33 +16,32 @@ class ReviewsController < ApplicationController
   end
 
   
+  def show
+    @product = Product.find(params[:product_id])
+    @review = Review.find(params[:id])
+    render :show
+  end
 
-  # def show
-  #   @album = Album.find(params[:album_id])
-  #   @song = Song.find(params[:id])
-  #   render :show
-  # end
+  def edit
+    @product = Product.find(params[:product_id])
+    @review = Review.find(params[:id])
+    render :edit
+  end
 
-  # def edit
-  #   @album = Album.find(params[:album_id])
-  #   @song = Song.find(params[:id])
-  #   render :edit
-  # end
+  def update
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      redirect_to product_path(@review.product)
+    else
+      render :edit
+    end
+  end
 
-  # def update
-  #   @song = Song.find(params[:id])
-  #   if @song.update(song_params)
-  #     redirect_to album_path(@song.album)
-  #   else
-  #     render :edit
-  #   end
-  # end
-
-  # def destroy
-  #   @song = Song.find(params[:id])
-  #   @song.destroy
-  #   redirect_to album_path(@song.album)
-  # end
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to product_path(@review.product)
+  end
 
   private
     def review_params
