@@ -1,20 +1,6 @@
 <div class = "jumbotron">
   <h1>Mario's Speciality Foods</h1>
 </div>
-<%
-=begin%>
- <% if @products.any? %>
-<h3>Products Available</h3>
-  <ul>
-    <% @products.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are no Products added yet.</p>
-<% end %> 
-<%
-=end%>
 
 <% if @products.any? %>
 <h3>Products Available</h3>
