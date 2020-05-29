@@ -19,6 +19,16 @@ def create
   end
 end
 
+def edit
+  @product = Product.find(params[:id])
+  render :edit
+end
+
+def show
+  @product = Product.find(params[:id])
+  render :show
+end
+
 
 
 
