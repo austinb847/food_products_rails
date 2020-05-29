@@ -1,13 +1,43 @@
 <div class = "jumbotron">
   <h1>Mario's Speciality Foods</h1>
 </div>
-<% if @products.any? %>
+<%
+=begin%>
+ <% if @products.any? %>
 <h3>Products Available</h3>
   <ul>
     <% @products.each do |product| %>
       <li><%= link_to product.name, product_path(product) %></li>
     <% end %>
   </ul>
+<% else %>
+  <p>There are no Products added yet.</p>
+<% end %> 
+<%
+=end%>
+
+<% if @products.any? %>
+<h3>Products Available</h3>
+<table class="table table-hover table-dark table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Product Cost</th>
+      <th scope="col">Product Origin</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.id%></td>
+      <td><%= link_to product.name, product_path(product) %></td>
+      <td><%= product.cost%></td>
+      <td><%= product.country_of_origin%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 <% else %>
   <p>There are no Products added yet.</p>
 <% end %>
