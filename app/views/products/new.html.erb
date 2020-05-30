@@ -1,4 +1,14 @@
 <h1>Add new product to store</h1>
+<div class="error_messages">
+  <% if @product.errors.any? %>
+    <h3>Please fix these errors:</h3>
+    <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
 
 <form action= "/products" class="new_product" id="new_product" method="post"><%= token_tag %> 
   <div class="form-row">
@@ -17,3 +27,5 @@
   </div>
   <button type="submit" class="btn btn-primary">Add Product</button>
 </form> 
+<br>
+<p><%= link_to "Return to Products", products_path %></p>

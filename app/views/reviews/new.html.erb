@@ -1,4 +1,14 @@
 <h1>Add Review for <%=@product.name %></h1>
+<div class="error_messages">
+  <% if @review.errors.any? %>
+    <h3>Please fix these errors:</h3>
+    <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
 
 <form action= "/products/<%=@product.id%>/reviews" class="new_review" id="new_review" method="post"><%= token_tag %> 
   <div class="form-group">
@@ -20,4 +30,6 @@
     <textarea class="form-control" id="inputContentBody" rows="3" name="review[content_body]"></textarea>
   </div>
   <button type="submit" class="btn btn-primary">Add Review</button>
-</form> 
+</form>
+<br>
+<p><%= link_to "Return to Product Page", product_path(@product) %></p>

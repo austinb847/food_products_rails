@@ -1,4 +1,14 @@
 <h1>Edit <%= @product.name %> </h1>
+<div class= "error_message">
+  <% if @product.errors.any? %>
+    <h3>Please fix these errors:</h3>
+    <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
 
 <form action= "/products/<%=@product.id%>" class="edit_product" id="edit_product" method="post"><%= token_tag %> 
 <input type="hidden" name="_method" value="patch" />

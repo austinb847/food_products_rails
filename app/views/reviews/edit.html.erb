@@ -1,5 +1,14 @@
-<h1>Edit Review for <%=@product.name %></h1>
-
+<h1>Edit Review</h1>
+<div class="error_messages">
+  <% if @review.errors.any? %>
+    <h3>Please fix these errors:</h3>
+    <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
 <form action= "/products/<%=@product.id%>/reviews/<%=@review.id%>" class="edit_review" id="edit_review" method="post"><%= token_tag %> 
 <input type="hidden" name="_method" value="patch" />
   <div class="form-group">
