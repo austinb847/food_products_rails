@@ -2,6 +2,9 @@ class ProductsController < ApplicationController
   
 def index
   @products = Product.all
+  if params[:search_name]
+    @products = Product.search(params[:search_name].downcase)
+  end
   render :index
 end
 

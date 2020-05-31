@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   validates :name, :country_of_origin,  presence: true
   validates_numericality_of :cost, only_integer: true
 
-  scope :search, -> (product_name) { where("name like ?", "%#{product_name}%")}
+  scope :search, -> (product_name) { where("LOWER(name) like ?", "%#{product_name}%")}
 
   private
     def capitalize_product
