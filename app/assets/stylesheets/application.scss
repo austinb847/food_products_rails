@@ -42,3 +42,15 @@
 .jumbotron h1 {
   color: black;
 }
+
+.error_message {
+  border-style: solid;
+  border: thin;
+  border-radius: 6px;
+  background-color: red;
+  padding: 6px;
+}
+
+.error_message h3, li {
+  color: black;
+}
