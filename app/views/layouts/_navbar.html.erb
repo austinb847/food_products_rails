@@ -3,20 +3,13 @@
   <a href="#news">News</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
-  <div class="dropdown">
-    <button class="dropbtn">
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Sign In</a>
-      <a href="#">Sign Up</a>
-      <a href="#">Sign Out</a>
-    </div>
-  </div>
+  <a href="/products">Products</a>
+  <% if current_page?(:controller => 'products', :action => 'index') %>
   <div id= "search_bar">
     <form class="form-inline my-2 my-lg-0 pull-right">
         <input class="form-control mr-sm-2" type="search" placeholder="Search Products" aria-label="Search" name="search_name">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
+  <% end %>
 </div>
