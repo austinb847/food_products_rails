@@ -28,5 +28,6 @@
 <% else %>
   <p>There are no Products added yet.</p>
 <% end %>
-
-<p><%= link_to "Create new product", new_product_path %></p>
+<% if is_admin? %>
+  <p><%= link_to "Create new product", new_product_path %></p>
+<% end %>
