@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-
+before_action :authorize, only: [:new, :edit, :destroy]
+before_action :authorize_admin, only: [:new, :edit, :destroy]
 def home
   render :home
 end
