@@ -22,11 +22,16 @@
     </div>
     <div class ="col-sm-2">
       <div class="sideBar">
+      <% if @products.any? %>
+      <p>Most Recently added Products</p>
         <ul>
-          <li>Most recent product added 1 </li>
-          <li>Most recent product added 2</li>
-          <li>Most recent product added 3</li>
+          <% @products.each do |product| %>
+          <li><%= product.name %></li>
+          <% end %>
         </ul>
+        <% else %>
+          <p>No products added yet.</p>
+        <% end %>
       </div>
     </div>
       <hr class="col-sm-12">
