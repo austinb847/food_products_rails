@@ -15,6 +15,7 @@ class Product < ApplicationRecord
     .limit(3)
     )}
 
+  scope :us_made_products, -> { where(country_of_origin: "USA")}
 
 
   private

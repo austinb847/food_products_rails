@@ -5,6 +5,15 @@
 <br>
 <% if @products.any? %>
 <h2>Products Available</h2>
+<% if is_admin? %>
+  <p><%= link_to "Create new product", new_product_path %></p>
+<% end %>
+<div class="form-check form-check-inline pull-right">
+  <form id= "usProductsForm">
+    <input class="form-check-input" type="checkbox" id="us_products" name="us_products">
+    <label class="form-check-label" for="us_products">Display US Made Products</label>
+  </form>
+</div>
 <table class="table table-hover table-dark table-bordered table-custom">
   <thead>
     <tr class="table-header">
@@ -27,7 +36,4 @@
 </table>
 <% else %>
   <p>There are no Products added yet.</p>
-<% end %>
-<% if is_admin? %>
-  <p><%= link_to "Create new product", new_product_path %></p>
 <% end %>

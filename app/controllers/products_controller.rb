@@ -13,6 +13,9 @@ def index
   if params[:search_name]
     @products = Product.search(params[:search_name].downcase)
   end
+  if params[:us_products]
+    @products = Product.us_made_products
+  end
   render :index
 end
 
