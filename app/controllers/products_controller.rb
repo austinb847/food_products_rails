@@ -4,6 +4,7 @@ before_action :authorize_admin, only: [:new, :edit, :destroy]
 
 def home
   @products = Product.three_recently_added
+  @product_reviews = Product.most_reviews
   render :home
 end
   

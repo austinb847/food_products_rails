@@ -22,17 +22,23 @@
     </div>
     <div class ="col-sm-2">
       <div class="sideBar">
-      <% if @products.any? %>
-      <p>Most Recently added Products</p>
-        <ul>
-          <% @products.each do |product| %>
-          <li><%= product.name %></li>
+        <% if @products.any? %>
+        <p>Most Recently added Products</p>
+          <ul>
+            <% @products.each do |product| %>
+            <li><%= product.name %></li>
+            <% end %>
+          </ul>
+          <% else %>
+            <p>No products added yet.</p>
           <% end %>
-        </ul>
-        <% else %>
-          <p>No products added yet.</p>
-        <% end %>
+          <p>Most Reviewed Products</p>
+            <ul>
+              <% @product_reviews.each do |product| %>
+              <li><%= product.name %></li>
+              <% end %>
+            </ul>
       </div>
     </div>
-      <hr class="col-sm-12">
+    <hr class="col-sm-12">
 </div>
