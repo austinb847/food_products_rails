@@ -14,3 +14,17 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery
+// $(document).ready(function (){ 
+//   $('.topnav a').filter(function(){return this.href==location.href}).parent().addClass('active').siblings().removeClass('active')
+// 		$('.topnav a').click(function(){
+// 			$(this).parent().addClass('active').siblings().removeClass('active')	
+// 		});
+//   // $(".topnav a").click(function(event) {
+//   //   event.preventDefault();
+//   //   $(".topnav a").removeClass('active');
+//   //   $(this).addClass('active')
+//   //   var href = $(this).attr('href');
+//   //   $(href).show();
+//   // });
+// });
