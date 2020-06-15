@@ -15,6 +15,7 @@ describe "the add a review to a product process" do
     fill_in 'Cost', :with => '3'
     fill_in 'Country of Origin', :with => 'USA'
     click_on 'Add Product'
+    #save_and_open_page
   end
 
   it "adds a new review" do
