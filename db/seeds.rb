@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Product.destroy_all
 Review.destroy_all
+User.destroy_all
 
 50.times do |product_index|
   product = Product.create!(name: Faker::Food.dish,
@@ -20,4 +21,9 @@ Review.destroy_all
   end
 end
 
+admin = User.create!(email: "admin@admin.com", admin: true, password: "admin")
+user = User.create!(email: "user@user.com", password: "1234")
+
 p "Created #{Product.count} products and #{Review.count} reviews"
+p "Created 1 admin with email: #{admin.email}"
+p "Created 1 user with email: #{user.email}"
