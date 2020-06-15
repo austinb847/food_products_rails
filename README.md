@@ -12,9 +12,13 @@ _A Ruby Rails app to add products to a store, and add multiple reviews for each 
 * _Step 1: Clone this repository https://github.com/austinb847/food_products_rails_
 * _Step 2: Cd to new directory_
 * _Step 3: Run Bundle install_
+* _Step 4: Run rake db:setup to add database and seeded data_
 * _Step 4: Run rails s_
 * _Step 5: Navigate to localhost:3000_
 
+## Admin functionality:
+
+* To see admin functionality make sure to first run rake db:setup and then sign in as admin@admin.com with password admin
 
 ## Specifications
 | Behavior     	| Input                                     	| Output                                                                                                 	|
