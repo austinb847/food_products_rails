@@ -20,6 +20,10 @@ _A Ruby Rails app to add products to a store, and add multiple reviews for each 
 
 * To see admin functionality make sure to first run rake db:setup and then sign in as admin@admin.com with password admin
 
+## Known bugs:
+
+* Display US made products button doesn't function as intended yet. 
+
 ## Specifications
 | Behavior     	| Input                                     	| Output                                                                                                 	|
 |--------------	|-------------------------------------------	|--------------------------------------------------------------------------------------------------------	|
